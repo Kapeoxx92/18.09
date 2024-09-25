@@ -6,10 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salon kosmetyczny</title>
     <link rel="stylesheet" href="styl7.css">
-    <link rel="stylesheet" href="twarz.html">
+
 </head>
 
 <body>
+    <script>
+        function price(){
+            let amount = 0;
+            if(document.getElementById("peeling").checked){
+                amount += 45;
+            }
+            if(document.getElementById("maska").checked){
+                amount += 30;
+            }
+            if(document.getElementById("masaz").checked){
+                amount += 20;
+            }
+            if(document.getElementById("makijaz").checked){
+                amount += 50;
+            }
+            let finalPrice = "Suma zabiegów: " + amount;
+            document.getElementById("cena").innerHTML = finalPrice;
+        }
+    </script>
     <div id="block">
         <div id="left">
             <div id="leftTop">
@@ -35,9 +54,13 @@
                 <h1>Usługi kosmetyczne</h1>
             </div>
             <div id="rightBottom">
-                <p>Witaj! Miło nam, że odwiedziłeś nasz salon. Zapoznaj się z ofertą lub skontaktuj się z nami</p>
-                <img src="obraz2.jpg" alt="Zrelaksuj się">
-                <h3>Telefon: 111 222 333</h3>
+                <h3>Kalkulator ceny wizyty</h3>
+                    <input type="checkbox" id="peeling">Peeling<br>
+                    <input type="checkbox" id="maska">Maska<br>
+                    <input type="checkbox" id="masaz">Masaż<br>
+                    <input type="checkbox" id="makijaz">Makijaż<br>
+                    <button onclick="price()">Oblicz cenę</button>
+                    <p id="cena"></p>
             </div>
         </div>
     </div>

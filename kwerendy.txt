@@ -1,3 +1,4 @@
-1. SELECT `nazwa`, `cena` FROM `uslugi`WHERE `cena` >= 50;
-2. SELECT avg(cena) as srednia_cena, COUNT(*) as liczba_uslug FROM `uslugi` WHERE kadra_id = 2;
-3. CREATE USER `kosmetyczka`@`localhost` IDENTIFIED by "kosmet34";
+SELECT `nazwa`, `cena` FROM `uslugi`WHERE `cena` >= 50;
+SELECT avg(cena) as srednia_cena, COUNT(*) as liczba_uslug FROM `uslugi` WHERE kadra_id = 2;
+CREATE USER `kosmetyczka`@`localhost` IDENTIFIED by "kosmet34";
+GRANT SELECT, UPDATE ON uslugi TO kosmetyczka;
